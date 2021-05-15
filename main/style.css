@@ -117,7 +117,7 @@ body {
   position: absolute;
   left: 0;
   top: -0px;
-  z-index: 4;
+  z-index: 0;
   -webkit-transform: translateX(-1000px);
           transform: translateX(-1000px);
 }
@@ -192,6 +192,7 @@ canvas {
   height: 80%;
   position: absolute;
   right: 0;
+  z-index: 0;
   -webkit-transform: translateX(1000px);
           transform: translateX(1000px);
   top: -300px;
@@ -288,5 +289,18 @@ canvas {
   font-size: 25px;
   margin: auto;
   padding: 20px;
+}
+
+.embed-outer {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=style.css.map */

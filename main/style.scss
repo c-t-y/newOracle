@@ -59,7 +59,7 @@ body {
   position: absolute;
   left: 0;
   top: -0px;
-  z-index: 4;
+  z-index: 0;
   transform: translateX(-1000px);
   .hand-left-img {
     img {
@@ -127,6 +127,7 @@ canvas {
   height: 80%;
   position: absolute;
   right: 0;
+  z-index: 0;
   transform: translateX(1000px);
   // left: 0;
 
@@ -224,4 +225,16 @@ canvas {
     margin: auto;
     padding: 20px;
   }
+}
+
+.embed-outer {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: 0.4s;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
 }

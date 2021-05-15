@@ -152,3 +152,66 @@ function modClick() {
   });
   console.log('hey');
 }
+
+let vidActive = 0;
+function embedVid() {
+  if (vidActive === 0) {
+    anime({
+      targets: '.hand-left-outer',
+      duration: 600,
+      translateX: [0, -1000],
+      easing: 'easeInOutSine',
+    });
+
+    anime({
+      targets: '.hand-right-outer',
+      duration: 900,
+      translateX: [0, 1000],
+      easing: 'easeInOutSine',
+    });
+    document.querySelector('.embed-outer').style.zIndex = 5;
+    document.querySelector('.embed-outer').style.opacity = 1;
+    // document.querySelector('.hand-left-outer').style.zIndex = -1;
+    // document.querySelector('.hand-right-outer').style.zIndex = -1;
+    anime({
+      targets: '.embed-outer',
+      zIndex: 5,
+      easing: 'easeInOutSine',
+    });
+    console.log('heyyyy');
+    vidActive = 1;
+    document.querySelector('#canvas').style.opacity = 0;
+  } else if (vidActive === 1) {
+    anime({
+      targets: '.hand-left-outer',
+      duration: 600,
+      translateX: [-1000, 0],
+      easing: 'easeInOutSine',
+    });
+
+    anime({
+      targets: '.hand-right-outer',
+      duration: 900,
+      translateX: [1000, 0],
+      easing: 'easeInOutSine',
+    });
+    document.querySelector('.embed-outer').style.zIndex = -1;
+    document.querySelector('.embed-outer').style.opacity = 0;
+    document.querySelector('#canvas').style.opacity = 1;
+    vidActive = 0;
+  }
+
+  // if (vidActive === 1) {
+  //   document.querySelector('.embed-outer').style.zIndex = -1;
+  //   document.querySelector('.embed-outer').style.opacity = 0;
+  //   document.querySelector('.hand-left-outer').style.zIndex = 2;
+  //   document.querySelector('.hand-right-outer').style.zIndex = 2;
+  //   anime({
+  //     targets: '.embed-outer',
+  //     zIndex: -1,
+  //     easing: 'easeInOutSine',
+  //   });
+  //   console.log('heyyyy');
+  //   vidActive = 0;
+  // }
+}
