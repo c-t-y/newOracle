@@ -58,3 +58,5 @@ function clickCard() {
 
   document.querySelector('.home-btn').style.opacity = 1;
 }
+
+/// modal

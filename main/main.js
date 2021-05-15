@@ -122,3 +122,33 @@ function init() {
 
 init();
 tool1.activate();
+
+function modClick() {
+  document.querySelector('.overlay').style.opacity = 0;
+  document.querySelector('.overlay').style.zIndex = -1;
+
+  document.querySelector('.start-btn-outer').style.opacity = 0;
+  document.querySelector('.start-btn-outer').style.zIndex = -1;
+
+  document.querySelector('#canvas').style.opacity = 1;
+  anime({
+    targets: '.mouth-gif',
+    opacity: 1,
+    duration: 10000,
+  });
+
+  anime({
+    targets: '.hand-left-outer',
+    duration: 600,
+    translateX: [-1000, 0],
+    easing: 'easeInOutSine',
+  });
+
+  anime({
+    targets: '.hand-right-outer',
+    duration: 900,
+    translateX: [1000, 0],
+    easing: 'easeInOutSine',
+  });
+  console.log('hey');
+}
