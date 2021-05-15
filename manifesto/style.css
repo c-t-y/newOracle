@@ -1,0 +1,85 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-filter: drop-shadow(0px 0px 180px #646db0);
+            filter: drop-shadow(0px 0px 180px #646db0);
+  }
+  to {
+    -webkit-filter: drop-shadow(0px 0px 40px rgba(104, 112, 175, 0.9));
+            filter: drop-shadow(0px 0px 40px rgba(104, 112, 175, 0.9));
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-filter: drop-shadow(0px 0px 180px #646db0);
+            filter: drop-shadow(0px 0px 180px #646db0);
+  }
+  to {
+    -webkit-filter: drop-shadow(0px 0px 40px rgba(104, 112, 175, 0.9));
+            filter: drop-shadow(0px 0px 40px rgba(104, 112, 175, 0.9));
+  }
+}
+
+.all-container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/stars.jpeg");
+  background-size: cover;
+}
+
+.all-container .inner-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.all-container .glow-container {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+}
+
+.all-container .glow-container img {
+  -webkit-filter: drop-shadow(0px 0px 100px rgba(95, 103, 166, 0.8));
+          filter: drop-shadow(0px 0px 100px rgba(95, 103, 166, 0.8));
+  width: 900px;
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.all-container .gator-container {
+  position: absolute;
+  bottom: 0;
+  z-index: 6;
+}
+
+.all-container .gator-container img {
+  width: 900px;
+}
+
+.all-container .text-container {
+  position: absolute;
+  font-size: 50px;
+  padding: 30px;
+  color: #58f976;
+  z-index: 7;
+  bottom: 0;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,465 @@
+@-webkit-keyframes pulse {
+  from {
+    -webkit-filter: drop-shadow(0px 0px 13px white);
+            filter: drop-shadow(0px 0px 13px white);
+  }
+  to {
+    -webkit-filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9));
+            filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9));
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-filter: drop-shadow(0px 0px 13px white);
+            filter: drop-shadow(0px 0px 13px white);
+  }
+  to {
+    -webkit-filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9));
+            filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9));
+  }
+}
+
+@-webkit-keyframes cardPulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes cardPulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg);
+            transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
+            transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-1deg);
+            transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg);
+            transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg);
+            transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
+            transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-1deg);
+            transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg);
+            transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@font-face {
+  font-family: pirata;
+  src: url(../assets/PirataOne-Regular.ttf);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#canvas-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.questionmark {
+  position: fixed;
+  right: 0;
+  z-index: 10;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  padding: 20px;
+}
+
+.questionmark img {
+  cursor: pointer;
+  width: 50px;
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.questionmark-back {
+  position: fixed;
+  right: 0;
+  z-index: -5;
+  padding: 20px;
+}
+
+.questionmark-back img {
+  cursor: pointer;
+  width: 50px;
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.card-container-outer-outer {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.card-container-outer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+      grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+  -ms-grid-rows: 140px 140px 140px 140px;
+      grid-template-rows: 140px 140px 140px 140px;
+  -webkit-column-gap: 2px;
+          column-gap: 2px;
+  row-gap: 2px;
+}
+
+.card-container {
+  width: 100px;
+  height: 140px;
+  -webkit-perspective: 600;
+          perspective: 600;
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 0.7s ease-in;
+  transition: all 0.7s ease-in;
+}
+
+.card .card-img {
+  width: 100%;
+}
+
+.card:hover {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+.card .side {
+  width: 100px;
+  height: 140px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  overflow: hidden;
+}
+
+.card .back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.question-input-container-outer {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  z-index: -1;
+  opacity: 0;
+}
+
+.question-input-container {
+  font-family: pirata;
+  color: #c9c371;
+  position: absolute;
+  padding: 10px;
+  border: 9px solid #836dff;
+  border-radius: 9px;
+  background: #44d9a8;
+  background: linear-gradient(186deg, #44d9a8 0%, #007366 0%, #57c59d 100%);
+}
+
+.question-input-container p {
+  margin: 0;
+  font-size: 30px;
+}
+
+.question-input-container .input-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.question-input-container input {
+  color: white;
+  outline: none;
+  border-radius: 9px;
+  border: none;
+  margin-top: 10px;
+  background-color: #b9abcf;
+  width: 300px;
+  height: 30px;
+  padding: 10px;
+}
+
+.question-input-container .egg-button {
+  padding: 10px;
+  height: 45px;
+}
+
+.question-input-container .egg-button:hover {
+  cursor: pointer;
+  -webkit-animation: shake 0.5s;
+          animation: shake 0.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.loading-container-outer {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  z-index: -1;
+  opacity: 0;
+}
+
+.loading-container-inner img {
+  width: 500px;
+}
+
+.question-reiterated {
+  font-family: helvetica;
+  text-align: center;
+  background: -webkit-linear-gradient(#f5ff97, #33ffee);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+  margin: 0;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.card-final-container {
+  opacity: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 50px;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  -webkit-transition: 3s ease;
+  transition: 3s ease;
+}
+
+.card-initial {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-top: 80px;
+}
+
+.card-initial img {
+  -webkit-box-shadow: 7px 9px 19px 0px rgba(0, 0, 0, 0.7);
+          box-shadow: 7px 9px 19px 0px rgba(0, 0, 0, 0.7);
+  width: 24%;
+  -webkit-animation: cardPulse 1s ease-in-out infinite alternate;
+          animation: cardPulse 1s ease-in-out infinite alternate;
+}
+
+.card-final {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+.card-final img {
+  width: 60%;
+  -webkit-box-shadow: 7px 9px 19px 0px rgba(0, 0, 0, 0.7);
+          box-shadow: 7px 9px 19px 0px rgba(0, 0, 0, 0.7);
+}
+
+.home-btn {
+  opacity: 0;
+  -webkit-transition: 3s ease;
+  transition: 3s ease;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+}
+
+.home-btn img {
+  width: 50px;
+  margin-bottom: 20px;
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.white-flash {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+/*# sourceMappingURL=style.css.map */

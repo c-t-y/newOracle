@@ -1,0 +1,321 @@
+@keyframes pulse {
+  from {
+    filter: drop-shadow(0px 0px 13px rgb(255, 255, 255));
+  }
+  to {
+    filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9));
+  }
+}
+
+@keyframes cardPulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@font-face {
+  font-family: pirata;
+  src: url(../assets/PirataOne-Regular.ttf);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#canvas-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.questionmark {
+  position: fixed;
+  right: 0;
+  z-index: 10;
+  transition: 0.5s ease;
+  padding: 20px;
+  img {
+    cursor: pointer;
+    width: 50px;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+  }
+}
+
+.questionmark-back {
+  position: fixed;
+  right: 0;
+  z-index: -5;
+
+  padding: 20px;
+  img {
+    cursor: pointer;
+    width: 50px;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+  }
+}
+
+.card-container-outer-outer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease;
+}
+
+.card-container-outer {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+  grid-template-rows: 140px 140px 140px 140px;
+  column-gap: 2px;
+  row-gap: 2px;
+}
+
+.card-container {
+  width: 100px;
+  height: 140px;
+  perspective: 600;
+  position: relative;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 0.7s ease-in;
+
+  .card-img {
+    width: 100%;
+  }
+}
+.card:hover {
+  transform: rotateY(180deg);
+  transition: all 0.5s ease-in;
+}
+.card .side {
+  width: 100px;
+  height: 140px;
+  backface-visibility: hidden;
+  position: absolute;
+  overflow: hidden;
+}
+.card .back {
+  transform: rotateY(180deg);
+}
+
+/////////// question input
+
+.question-input-container-outer {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.6s ease;
+  z-index: -1;
+  opacity: 0;
+}
+
+.question-input-container {
+  font-family: pirata;
+  color: rgb(201, 195, 113);
+  position: absolute;
+  padding: 10px;
+  border: 9px solid rgb(131, 109, 255);
+  border-radius: 9px;
+  background: rgb(68, 217, 168);
+  background: linear-gradient(
+    186deg,
+    rgba(68, 217, 168, 1) 0%,
+    rgba(0, 115, 102, 1) 0%,
+    rgb(87, 197, 157) 100%
+  );
+
+  p {
+    margin: 0;
+    font-size: 30px;
+  }
+
+  .input-btn-container {
+    display: flex;
+  }
+
+  input {
+    color: white;
+    outline: none;
+    border-radius: 9px;
+    border: none;
+    margin-top: 10px;
+    background-color: hsl(263, 27%, 74%);
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+  }
+
+  .egg-button {
+    padding: 10px;
+    height: 45px;
+
+    &:hover {
+      cursor: pointer;
+      animation: shake 0.5s;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+//////// loading container
+
+.loading-container-outer {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease;
+  z-index: -1;
+  opacity: 0;
+}
+
+.loading-container-inner {
+  img {
+    width: 500px;
+  }
+}
+
+.question-reiterated {
+  font-family: helvetica;
+  text-align: center;
+  background: -webkit-linear-gradient(rgb(245, 255, 151), rgb(51, 255, 238));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+  margin: 0;
+  opacity: 0;
+  transition: 1s;
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+}
+
+////// card spread
+
+.card-final-container {
+  opacity: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 50px;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  transition: 3s ease;
+}
+
+.card-initial {
+  opacity: 1;
+  transition: 0.5s;
+  margin-top: 80px;
+  img {
+    box-shadow: 7px 9px 19px 0px rgba(0, 0, 0, 0.7);
+    width: 24%;
+    animation: cardPulse 1s ease-in-out infinite alternate;
+  }
+}
+
+.card-final {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: 1s ease;
+  img {
+    width: 60%;
+    box-shadow: 7px 9px 19px 0px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.home-btn {
+  opacity: 0;
+  transition: 3s ease;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  img {
+    width: 50px;
+    margin-bottom: 20px;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+  }
+}
+
+///// white flash
+
+.white-flash {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
+  transition: 2s;
+}
