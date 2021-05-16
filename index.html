@@ -4,40 +4,56 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ORACLE</title>
+    <title>oracle main</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body onclick="playAudio('./assets/SNAKE_BEEP_PROCESSED.mp3')">
-    <div class="all-container">
-      <div class="vid-container">
-        <video muted autoplay loop width="100%">
-          <source src="./assets/Snake.webm" type="video/webm" />
-        </video>
-      </div>
-      <div class="text-container">
-        <ul>
-          <li class="text" id="line-1">chameleon utterances noisy throat</li>
-          <li class="text" id="line-2">caterpillar undulations nested topology</li>
-          <li class="text" id="line-3">centipede underworld noxious toxin</li>
-          <li class="text" id="line-4">categorical uncertainty nonlinguistic tongues</li>
-          <li class="text" id="line-5">conscious underbelly nimble tapeworm</li>
-          <li class="text" id="line-6">computational unconscious nonhuman takeover</li>
-          <li class="text" id="line-7">crocodilian undergods numinous tendencies</li>
-          <li class="text" id="line-8">cyclical upheaval nonlinear temporality</li>
-          <li class="text" id="line-9">clitoral urgency nymphomaniacal tigers</li>
-          <li class="text" id="line-10">coextensive urchins networked tidepools</li>
-          <li class="text" id="line-11">cockroach utopia nuclear technology</li>
-          <li class="text" id="line-12">cosmological unfolding nascent taxonomies</li>
-          <li class="text" id="line-13">catalytic underground nameless terrestrials</li>
-          <li class="text" id="line-14">concentric uteri nonsensical territory</li>
-          <li class="text" id="line-15">cerebral unknowns negative transfers</li>
-          <li class="text" id="line-16">cancerous ulcers nauseated tendons</li>
-          <li class="text" id="line-17">cosmic umbras nebular timezones</li>
-          <li class="text" id="line-18">compulsory ultrasound nephrotoxic tampons</li>
-          <li class="text" id="line-19">calculated ultimatum neutered testicles</li>
-        </ul>
+  <body>
+    <audio id="egghoverLeft" preload="auto" src="./assets/sounds/EGG HOVER 1.mp3"></audio>
+    <audio id="egghoverRight" preload="auto" src="./assets/sounds/EGG HOVER 2.mp3"></audio>
+    <canvas id="canvas"></canvas>
+    <div class="overlay"></div>
+    <div onclick="modClick()" class="start-btn-outer">
+      <div class="start-btn">
+        <p>THE WOMB IS A PORTAL<br />TO ALL THINGS OTHER</p>
       </div>
     </div>
+
+    <div class="embed-outer">
+      <iframe
+        width="400"
+        height="285"
+        src="https://www.youtube.com/embed/9RK0ZEUJ384"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="all-container">
+      <div class="hand-left-outer">
+        <div class="hand-left-img"><img src="./assets/handleft.png" /></div>
+        <div class="egg-left-img">
+          <a href="./oraclecards/index.html"><img id="eggleft" src="./assets/eggleft.png" /></a>
+        </div>
+        <div class="snake-icon-img">
+          <a href="./manifesto/index.html"><img src="./assets/snakeicon.png" /></a>
+        </div>
+      </div>
+      <div class="hand-right-outer">
+        <div class="hand-right-img"><img src="./assets/handright.png" /></div>
+        <div class="egg-right-img">
+          <a href="./poem/index.html"><img id="eggright" src="./assets/eggright.png" /></a>
+        </div>
+      </div>
+      <div onclick="embedVid()" class="mouth-gif">
+        <img src="./assets/mouth-mover.gif" />
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.0/paper-full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

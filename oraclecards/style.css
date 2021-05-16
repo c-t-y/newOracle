@@ -26,8 +26,8 @@
             transform: scale(1);
   }
   100% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
 }
 
@@ -37,8 +37,8 @@
             transform: scale(1);
   }
   100% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
 }
 
@@ -395,14 +395,14 @@ body {
   position: absolute;
   top: 0;
   text-align: center;
-  -webkit-transition: 3s ease;
-  transition: 3s ease;
+  -webkit-transition: 2s ease;
+  transition: 2s ease;
 }
 
 .card-initial {
   opacity: 1;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 1s;
+  transition: 1s;
   margin-top: 80px;
 }
 
@@ -423,7 +423,12 @@ body {
 }
 
 .card-final img {
-  width: 60%;
+  width: 57%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -60%);
+          transform: translate(-50%, -60%);
   -webkit-box-shadow: 7px 9px 19px 0px rgba(0, 0, 0, 0.7);
           box-shadow: 7px 9px 19px 0px rgba(0, 0, 0, 0.7);
 }
@@ -459,7 +464,7 @@ body {
   height: 100%;
   background-color: white;
   z-index: -1;
-  -webkit-transition: 2s;
-  transition: 2s;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,155 @@
+@font-face {
+  font-family: diara;
+  src: url(../assets/diara.otf);
+}
+
+@keyframes btnPulse {
+  from {
+    filter: drop-shadow(0px 0px 13px rgb(255, 255, 255));
+  }
+  to {
+    filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9));
+  }
+}
+
+html,
+body {
+  font-family: diara;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: 0.4s;
+  user-select: none;
+}
+
+.all-container {
+  height: 100%;
+  width: 100%;
+
+  .vid-container {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    video {
+      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .text-container {
+    position: absolute;
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+    color: #5ca17c;
+    // background: -webkit-linear-gradient(#f0ff1f, #0eff86);
+    // -webkit-background-clip: text;
+    // background-clip: text;
+    // -webkit-text-fill-color: transparent;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      margin: 0;
+
+      li {
+        margin-left: 10px;
+        flex: auto;
+      }
+    }
+    .text {
+      transition: 1s;
+      font-size: 2vw;
+      opacity: 0;
+      text-shadow: 1px 1px #000000;
+      // transform: scale(0, 0);
+    }
+    #line-1 {
+      color: #f4f589;
+    }
+    #line-2 {
+      color: #f1f58a;
+    }
+    #line-3 {
+      color: #eef68c;
+    }
+    #line-4 {
+      color: #eaf68f;
+    }
+    #line-5 {
+      color: #e5f692;
+    }
+    #line-6 {
+      color: #e0f795;
+    }
+    #line-7 {
+      color: #dbf798;
+    }
+    #line-8 {
+      color: #d6f79c;
+    }
+    #line-9 {
+      color: #d0f8a0;
+    }
+    #line-10 {
+      color: #caf8a3;
+    }
+    #line-11 {
+      color: #c4f9a7;
+    }
+    #line-12 {
+      color: #bef9ab;
+    }
+    #line-13 {
+      color: #b9faae;
+    }
+    #line-14 {
+      color: #b3fab2;
+    }
+    #line-15 {
+      color: #aefab5;
+    }
+    #line-16 {
+      color: #a9fbb8;
+    }
+    #line-17 {
+      color: #a5fbbb;
+    }
+    #line-18 {
+      color: #a1fbbe;
+    }
+    #line-19 {
+      color: #9dfcc0;
+    }
+    #line-20 {
+      color: #9bfcc2;
+    }
+  }
+}
+
+.home-btn {
+  padding: 50px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: 1s;
+  img {
+    width: 70px;
+    animation-name: btnPulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+  }
+}

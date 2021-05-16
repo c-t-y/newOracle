@@ -41,7 +41,7 @@ function draw() {
 }
 
 addEventListener('mousemove', (e) => {
-  mouse.a = e.pageX;
+  mouse.a = e.pageX + 4;
   mouse.b = e.pageY;
 });
 

@@ -12,7 +12,7 @@
     transform: scale(1);
   }
   100% {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 
@@ -266,12 +266,12 @@ body {
   position: absolute;
   top: 0;
   text-align: center;
-  transition: 3s ease;
+  transition: 2s ease;
 }
 
 .card-initial {
   opacity: 1;
-  transition: 0.5s;
+  transition: 1s;
   margin-top: 80px;
   img {
     box-shadow: 7px 9px 19px 0px rgba(0, 0, 0, 0.7);
@@ -286,7 +286,11 @@ body {
   opacity: 0;
   transition: 1s ease;
   img {
-    width: 60%;
+    width: 57%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
     box-shadow: 7px 9px 19px 0px rgba(0, 0, 0, 0.7);
   }
 }
@@ -317,5 +321,5 @@ body {
   height: 100%;
   background-color: white;
   z-index: -1;
-  transition: 2s;
+  transition: 1s ease;
 }

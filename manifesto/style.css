@@ -9,10 +9,32 @@ body {
           user-select: none;
 }
 
+@-webkit-keyframes btnPulse {
+  from {
+    -webkit-filter: drop-shadow(0px 0px 13px white);
+            filter: drop-shadow(0px 0px 13px white);
+  }
+  to {
+    -webkit-filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9));
+            filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9));
+  }
+}
+
+@keyframes btnPulse {
+  from {
+    -webkit-filter: drop-shadow(0px 0px 13px white);
+            filter: drop-shadow(0px 0px 13px white);
+  }
+  to {
+    -webkit-filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9));
+            filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9));
+  }
+}
+
 @-webkit-keyframes pulse {
   from {
-    -webkit-filter: drop-shadow(0px 0px 180px #646db0);
-            filter: drop-shadow(0px 0px 180px #646db0);
+    -webkit-filter: drop-shadow(0px 0px 180px #a394f5);
+            filter: drop-shadow(0px 0px 180px #a394f5);
   }
   to {
     -webkit-filter: drop-shadow(0px 0px 40px rgba(104, 112, 175, 0.9));
@@ -22,8 +44,8 @@ body {
 
 @keyframes pulse {
   from {
-    -webkit-filter: drop-shadow(0px 0px 180px #646db0);
-            filter: drop-shadow(0px 0px 180px #646db0);
+    -webkit-filter: drop-shadow(0px 0px 180px #a394f5);
+            filter: drop-shadow(0px 0px 180px #a394f5);
   }
   to {
     -webkit-filter: drop-shadow(0px 0px 40px rgba(104, 112, 175, 0.9));
@@ -63,8 +85,8 @@ body {
 }
 
 .all-container .glow-container img {
-  -webkit-filter: drop-shadow(0px 0px 100px rgba(95, 103, 166, 0.8));
-          filter: drop-shadow(0px 0px 100px rgba(95, 103, 166, 0.8));
+  -webkit-filter: drop-shadow(0px 0px 100px #818bda);
+          filter: drop-shadow(0px 0px 100px #818bda);
   width: 900px;
   -webkit-animation-name: pulse;
           animation-name: pulse;
@@ -96,5 +118,25 @@ body {
   color: #58f976;
   z-index: 7;
   bottom: 0;
+}
+
+.home-btn {
+  padding: 50px;
+  position: absolute;
+  right: 0;
+}
+
+.home-btn img {
+  width: 70px;
+  -webkit-animation-name: btnPulse;
+          animation-name: btnPulse;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
 }
 /*# sourceMappingURL=style.css.map */
